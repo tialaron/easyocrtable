@@ -64,6 +64,8 @@ if is_clicked2:
             
             bounds = data2.values.tolist()
             print(bounds)
+            st.write(type(bounds))
+            st.write(bounds)
             #text1 = ''
             #for i in range(len(bounds)):
             #            text1 = text1 + bounds[i][1] + '\n'
