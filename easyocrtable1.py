@@ -4,7 +4,7 @@ import spacy_streamlit
 import numpy as np
 import PIL
 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 import pandas as pd
 import ast
