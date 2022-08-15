@@ -59,7 +59,7 @@ full_path = path_pict+option1+'.xlsx'
 data1 = pd.read_excel(full_path)
 data1.to_csv('ttt.csv')
 data2 = pd.read_csv('ttt.csv', header = 0)
-st.dataframe(data2.fillna(''))
+
 dataframe1 = st.table(data2.head(9))
 
 is_clicked2 = st.button("Найти")
