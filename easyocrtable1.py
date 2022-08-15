@@ -3,9 +3,9 @@ import spacy
 import spacy_streamlit
 import numpy as np
 import PIL
-import easyocr
+
 import matplotlib.pyplot as plt
-import cv2
+
 import pandas as pd
 import ast
 
