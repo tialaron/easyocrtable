@@ -71,7 +71,7 @@ if is_clicked2:
             text1 = ''
             for i in range(len(bounds)):
                         for j in range(len(bounds[i])):
-                                    if not bounds[i][j].isna() :
+                                    if bounds[i][j].isna() :
                                                 text1 = text1 + str(bounds[i][j]) + '\n'
             st.write(text1)
             #nlp1 = spacy.load('ru_core_news_sm')
