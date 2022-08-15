@@ -6,7 +6,7 @@ import PIL
 import easyocr
 import matplotlib.pyplot as plt
 import cv2
-import boxesdrawer
+
 import ast
 
 from PIL import Image,ImageDraw
