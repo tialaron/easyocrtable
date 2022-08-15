@@ -6,7 +6,7 @@ import PIL
 import easyocr
 import matplotlib.pyplot as plt
 import cv2
-
+import pandas as pd
 import ast
 
 from PIL import Image,ImageDraw
