@@ -54,6 +54,7 @@ st.write('Нейронная сеть, представленная здесь, 
 st.write('Вы можете выбрать любую таблицу из представленных в списке для распознавания.')
 option1 = st.selectbox('Какой документ Вы выбираете?',('спецификация_1','СНИЛС','полис','регистрация','договор'))
 full_path = path_pict+option1+'.xlsx'
-data1 = st.table(full_path)
+data1 = pd.read_excel(full_path)
+dataframe1 = st.table(data1)
 
 
