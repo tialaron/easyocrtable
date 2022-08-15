@@ -4,11 +4,13 @@ import spacy_streamlit
 import numpy as np
 import PIL
 
+
 #import matplotlib.pyplot as plt
 
 import pandas as pd
 import ast
 
+from numpy import math
 from PIL import Image,ImageDraw
 from spacy import displacy
 
@@ -69,7 +71,7 @@ if is_clicked2:
             text1 = ''
             for i in range(len(bounds)):
                         for j in range(len(bounds[i])):
-                                    if bounds[i][j] not NaN :
+                                    if bounds[i][j] != None :
                                                 text1 = text1 + str(bounds[i][j]) + '\n'
             st.write(text1)
             #nlp1 = spacy.load('ru_core_news_sm')
