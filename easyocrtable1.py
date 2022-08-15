@@ -13,16 +13,15 @@ from PIL import Image,ImageDraw
 from spacy import displacy
 
 image11 = Image.open('pipesegm.png')
-path_pict = '/app/easyocrstream/pictures/'
+path_pict = '/app/easyocrtable/pictures/'
 
 st.markdown('''<h1 style='text-align: center; color: #F64A46;'
-            >Распознавание документов с помощью EasyOCR.</h1>''',
+            >Распознавание таблиц с помощью Spacy.</h1>''',
             unsafe_allow_html=True)
 
 st.write("""
-Лабораторная работа *"Распознавание документов с помощью библиотеки [EasyOCR](https://www.jaided.ai/easyocr/)"* позволяет продемонстрировать 
-работу фреймворка, основанного на [Pytorch](https://pytorch.org/)  для извлечения текста из изображения. Это обычная [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition) библиотека, которая может читать как
-текст с большим расстоянием между строк, так и плотный текст в документе. В настоящее время поддерживает более 80 языков и расширяется.
+Лабораторная работа *"Распознавание таблиц с помощью библиотеки [Spacy](https://spacy.io/)"* позволяет продемонстрировать 
+работу библиотеки с открытым исходным кодом для расширенной обработки естественного языка, написанной на языках программирования [Python](https://ru.wikipedia.org/wiki/Python) и [Cython](https://ru.wikipedia.org/wiki/Cython) для распознавания "сущностей" в тексте.
 """)
 
 
