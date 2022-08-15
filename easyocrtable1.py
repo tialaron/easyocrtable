@@ -53,7 +53,7 @@ st.markdown('''<h1 style='text-align: center; color: black;'
 st.write('Нейронная сеть, представленная здесь, обучена распзнавать документы в виде JPG файлов.')
 st.write('Вы можете выбрать любой документ из представленных в списке для распознавания.')
 option1 = st.selectbox('Какой документ Вы выбираете?',('спецификация_1','СНИЛС','полис','регистрация','договор'))
-full_path = path_pict+option1+'_ЧБ.xlsx'
+full_path = path_pict+option1+'.xlsx'
 data1 = st.table(full_path)
 
 
