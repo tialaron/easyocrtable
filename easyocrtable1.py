@@ -66,9 +66,12 @@ if is_clicked2:
             print(bounds)
             st.write(type(bounds))
             st.write(bounds)
-            #text1 = ''
-            #for i in range(len(bounds)):
-            #            text1 = text1 + bounds[i][1] + '\n'
+            text1 = ''
+            for i in range(len(bounds)):
+                        for j in range(len(bounds[i])):
+                                    if bounds[i][j] != NaN:
+                                                text1 = text1 + bounds[i][1] + '\n'
+            st.write(text1)
             #nlp1 = spacy.load('ru_core_news_sm')
             #doc1 = nlp1(text1)
             #ent_html = displacy.render(doc1, style="ent", jupyter=False)
