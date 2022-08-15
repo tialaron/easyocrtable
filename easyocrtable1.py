@@ -13,7 +13,7 @@ from PIL import Image,ImageDraw
 from spacy import displacy
 
 image11 = Image.open('pipesegm.png')
-path_pict = '/app/easyocrtable/pictures/'
+path_pict = '/app/easyocrtable/tables/'
 
 st.markdown('''<h1 style='text-align: center; color: #F64A46;'
             >Распознавание таблиц с помощью Spacy.</h1>''',
