@@ -59,4 +59,17 @@ data1.to_csv('ttt.csv')
 data2 = pd.read_csv('ttt.csv')
 dataframe1 = st.table(data2)
 
-
+is_clicked2 = st.button("Найти")
+if is_clicked2:
+            file_reader = open('bounds_list.txt', 'rt')
+            text_bounds = file_reader.read()
+            file_reader.close()
+            bounds = data2.values.tolist()
+            print(bounds)
+            #text1 = ''
+            #for i in range(len(bounds)):
+            #            text1 = text1 + bounds[i][1] + '\n'
+            #nlp1 = spacy.load('ru_core_news_sm')
+            #doc1 = nlp1(text1)
+            #ent_html = displacy.render(doc1, style="ent", jupyter=False)
+            #st.markdown(ent_html, unsafe_allow_html=True)
