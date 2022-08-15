@@ -55,6 +55,6 @@ st.write('Вы можете выбрать любую таблицу из пре
 option1 = st.selectbox('Какой документ Вы выбираете?',('спецификация_1','СНИЛС','полис','регистрация','договор'))
 full_path = path_pict+option1+'.xlsx'
 data1 = pd.read_excel(full_path)
-#dataframe1 = st.table(data1)
+dataframe1 = st.table(data1)
 
 
