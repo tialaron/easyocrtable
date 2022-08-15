@@ -61,9 +61,7 @@ dataframe1 = st.table(data2)
 
 is_clicked2 = st.button("Найти")
 if is_clicked2:
-            file_reader = open('bounds_list.txt', 'rt')
-            text_bounds = file_reader.read()
-            file_reader.close()
+            
             bounds = data2.values.tolist()
             print(bounds)
             #text1 = ''
