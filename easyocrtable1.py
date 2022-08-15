@@ -70,7 +70,7 @@ if is_clicked2:
             for i in range(len(bounds)):
                         for j in range(len(bounds[i])):
                                     if bounds[i][j] :
-                                                text1 = text1 + bounds[i][j] + '\n'
+                                                text1 = text1 + str(bounds[i][j]) + '\n'
             st.write(text1)
             #nlp1 = spacy.load('ru_core_news_sm')
             #doc1 = nlp1(text1)
