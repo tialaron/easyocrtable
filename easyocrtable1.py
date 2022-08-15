@@ -66,14 +66,15 @@ is_clicked2 = st.button("Найти")
 if is_clicked2:
             
             bounds = data2.values.tolist()
-            print(bounds)
-            st.write(type(bounds))
-            st.write(bounds)
+            cleanedList_bounds = [x for x in bounds if str(x) != 'nan']
+            print(cleanedList_bounds)
+            st.write(type(cleanedList_bounds))
+            st.write(cleanedList_bounds)
             text1 = ''
-            for i in range(len(bounds)):
-                        for j in range(len(bounds[i])):
-                                    if  np.isnan(bounds[i][j].values.any()) :
-                                                text1 = text1 + str(bounds[i][j]) + '\n'
+            for i in range(len(cleanedList_bounds)):
+                        for j in range(len(cleanedList_bounds[i])):
+                                    if  np.isnan(cleanedList_bounds[i][j].values.any()) :
+                                                text1 = text1 + str(cleanedList_bounds[i][j]) + '\n'
             st.write(text1)
             
             nlp1 = spacy.load('ru_core_news_sm')
