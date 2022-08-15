@@ -56,44 +56,4 @@ option1 = st.selectbox('Какой документ Вы выбираете?',('
 full_path = path_pict+option1+'_ЧБ.xlsx'
 data1 = st.table(full_path)
 
-st.write('Теперь нужно разметить документ таким образом, чтобы выделить из него текст.')
-st.write('Для этого нажмите на кнопку "Распознать" и дождитесь когда появится документ с выделенными участками текста')
-is_clicked1 = st.button("Распознать")
-if is_clicked1:
-            image1 = open(full_path,'rb')
-            f = image1.read()
-            file_bytes = np.asarray(bytearray(f),dtype=np.uint8)
-            bytearray_img = cv2.imdecode(file_bytes, 1)
-            image1.close()
-            reader1 = easyocr.Reader(['ru'])
-            bounds = reader1.readtext(bytearray_img)
-            image2 = boxesdrawer.draw_boxes(full_path, bounds)
-            image2.save('out111.jpg')
-            st.image('out111.jpg')
-            file_list = open('bounds_list.txt', 'wt')
-            file_list.write(str(bounds))
-            file_list.close()
 
-st.write('Далее необходимо сделать так, чтобы нейронка "поняла" текст и выделила в нем главное.')
-st.write('Данную проблему обычно называют [NER-задачей](https://sysblok.ru/glossary/named-entity-recognition-ner/) или Named Entity Recognition.')
-st.write('В ее решении может помочь библиотека [Spacy](https://spacy.io/). Это промышленная библиотека по выделению именованных сущностей из текста.')
-st.write('Нажмите на кнопку "Найти" и дождитесь результата.')
-is_clicked2 = st.button("Найти")
-if is_clicked2:
-            file_reader = open('bounds_list.txt', 'rt')
-            text_bounds = file_reader.read()
-            file_reader.close()
-            bounds = ast.literal_eval(text_bounds)
-            text1 = ''
-            for i in range(len(bounds)):
-                        text1 = text1 + bounds[i][1] + '\n'
-            nlp1 = spacy.load('ru_core_news_sm')
-            doc1 = nlp1(text1)
-            ent_html = displacy.render(doc1, style="ent", jupyter=False)
-            st.markdown(ent_html, unsafe_allow_html=True)
-st.write('Ключевые обозначения: PER - личные данные (Personal), ORG - название организации (Organisation), LOC - локация, географическое положение (Location), DATE - дата')
-st.write('А теперь, ответьте на вопросы:')
-st.write('1. Как расшифровывается аббревиатура OCR?')
-st.write('2. Как расшифровывается аббревиатура NER?')
-st.write('3. Подсчитайте выделенные разноцветные поля (PER,ORG,LOC). Сколько их всего?')
-st.write('4. Подсчитайте количество полей каждого типа (сколько PER, сколько ORG, сколько LOC).')
