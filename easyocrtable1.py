@@ -58,7 +58,7 @@ option1 = st.selectbox('Какой документ Вы выбираете?',('
 full_path = path_pict+option1+'.xlsx'
 data1 = pd.read_excel(full_path)
 data1.to_csv('ttt.csv')
-data2 = pd.read_csv('ttt.csv', header = 0)
+data2 = pd.read_csv('ttt.csv')
 
 dataframe1 = st.table(data2.head(9))
 
@@ -72,10 +72,10 @@ if is_clicked2:
             text1 = ''
             for i in range(len(bounds)):
                         for j in range(len(bounds[i])):
-                                    if bounds[i][j].isna() :
+                                    if bounds[i][j] :
                                                 text1 = text1 + str(bounds[i][j]) + '\n'
             st.write(text1)
-            #nlp1 = spacy.load('ru_core_news_sm')
-            #doc1 = nlp1(text1)
-            #ent_html = displacy.render(doc1, style="ent", jupyter=False)
-            #st.markdown(ent_html, unsafe_allow_html=True)
+            nlp1 = spacy.load('ru_core_news_sm')
+            doc1 = nlp1(text1)
+            ent_html = displacy.render(doc1, style="ent", jupyter=False)
+            st.markdown(ent_html, unsafe_allow_html=True)
