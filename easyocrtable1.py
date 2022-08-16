@@ -71,38 +71,25 @@ st.write('Теперь попробуйте обнаружить в тексте
 is_clicked2 = st.button("Найти")
 if is_clicked2:
             
-            bounds = data2.values.tolist()
-            st.write(len(bounds))
-            st.write(len(bounds[0]))
-      
+            bounds = data2.values.tolist()      
             text1 = ''
             for i in range(len(bounds)):
                         for j in range(len(bounds[i])):
                                     if  bounds[i][j] :
                                                 text1 = text1 + str(bounds[i][j]) + ','
-            st.write(text1)
-            st.write(len(text1))
-            st.write(type(text1))
+            
             text2 = text1.split(',')           
-            #text2 = text1.replace('nan', '') 
-            st.write(text2)
-            st.write(type(text2))
-            st.write(len(text2))
-            st.write(text2[0])
-            st.write(type(text2[0]))
             text3 = []
             for i in text2:
                         if i != "nan":
                                     text3.append(i)
-            st.write(text3)
             text4 = ''
             for i in text3:
                         text4 = text4 + i + ' '
-            st.write(text4)
+            
             nlp1 = spacy.load('ru_core_news_sm')
             doc1 = nlp1(text4)
-            #st.write(doc1)
+            
             ent_html = displacy.render(doc1, style="ent", jupyter=False)
                  
             st.markdown(ent_html, unsafe_allow_html=True)
-            #st.write(type(ent_html))
