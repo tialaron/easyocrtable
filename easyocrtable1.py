@@ -79,7 +79,7 @@ if is_clicked2:
                                                 listok1.append(bounds[i][j])
             listok2 = []
             for i in range(len(listok1)):
-                        if listok1[i] != 'nan' : 
+                        if listok1[i] != 'NaN' : 
                                     listok2.append(listok1[i])
             st.write(listok2)
             text1 = ''
