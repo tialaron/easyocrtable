@@ -72,6 +72,8 @@ is_clicked2 = st.button("Найти")
 if is_clicked2:
             
             bounds = data2.values.tolist()
+            st.write(len(bounds))
+            st.write(len(bounds[0]))
       
             text1 = ''
             for i in range(len(bounds)):
