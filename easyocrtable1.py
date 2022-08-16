@@ -72,7 +72,16 @@ is_clicked2 = st.button("Найти")
 if is_clicked2:
             
             bounds = data2.values.tolist()
-                                    
+            listok1 = []
+            for i in range(len(bounds)):
+                        for j in range(len(bounds[i])):
+                                    if bounds[i][j] :
+                                                listok1.append(bounds[i][j])
+            listok2 = []
+            for i in range(len(listok1)):
+                        if listok1[i] != 'nan' : 
+                                    listok2.append(listok1[i])
+            st.write(listok2)
             text1 = ''
             for i in range(len(bounds)):
                         for j in range(len(bounds[i])):
