@@ -100,9 +100,9 @@ if is_clicked2:
                         text4 = text4 + i + ' '
             st.write(text4)
             nlp1 = spacy.load('ru_core_news_sm')
-            doc1 = nlp1(text2)
+            doc1 = nlp1(text4)
             #st.write(doc1)
             ent_html = displacy.render(doc1, style="ent", jupyter=False)
                  
-            #st.markdown(ent_html, unsafe_allow_html=True)
+            st.markdown(ent_html, unsafe_allow_html=True)
             #st.write(type(ent_html))
