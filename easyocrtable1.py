@@ -16,6 +16,7 @@ from spacy import displacy
 
 image11 = Image.open('pipesegm.png')
 path_pict = '/app/easyocrtable/tables/'
+pictures_all = '/app/easyocrtable/pictures/'
 
 st.markdown('''<h1 style='text-align: center; color: #F64A46;'
             >Распознавание таблиц с помощью Spacy.</h1>''',
@@ -54,8 +55,13 @@ st.markdown('''<h1 style='text-align: center; color: black;'
             unsafe_allow_html=True)
 st.write('Нейронная сеть, представленная здесь, обучена выделять элементы текста и разделять их на категории (сущности).')
 st.write('Вы можете выбрать любую таблицу из представленных в списке для распознавания.')
-option1 = st.selectbox('Какой документ Вы выбираете?',('спецификация_1','СНИЛС','полис','регистрация','договор'))
-full_path = path_pict+option1+'.xlsx'
+option1 = st.selectbox('Какой документ Вы выбираете?',('спецификация','СНИЛС','полис','регистрация','договор'))
+st.write('Вы выбрали' + option1)
+if option1:
+            st.write('Вот так выглядит документ')
+            st.image(pictures_all + option1 + '1.jpg')
+            
+full_path = path_pict+option1+'_1.xlsx'
 data1 = pd.read_excel(full_path)
 data1.to_csv('ttt.csv')
 data2 = pd.read_csv('ttt.csv')
