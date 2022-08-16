@@ -59,14 +59,14 @@ option1 = st.selectbox('Какой документ Вы выбираете?',('
 st.write('Вы выбрали документ - ' + option1)
 st.write('Вот так выглядит документ')
 st.image(pictures_all + option1 + '1.jpg')
-st.write('Вот так он выглядит в качестве таблицы')            
+st.write('Вот так его воспринимает программа (в виде таблицы). Пометка <NA> обозначает пустую ячейку.')            
 full_path = path_pict+option1+'_1.xlsx'
 data1 = pd.read_excel(full_path)
 data1.to_csv('ttt.csv')
 data2 = pd.read_csv('ttt.csv')
 
 dataframe1 = st.table(data2.head(9))
-
+st.write('Теперь попробуйте обнаружить в тексте ключевые элементы ("сущности") с помощью Spacy.')
 is_clicked2 = st.button("Найти")
 if is_clicked2:
             
