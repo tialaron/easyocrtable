@@ -82,6 +82,7 @@ if is_clicked2:
                                                 text1 = text1 + str(bounds[i][j]) + ','
             st.write(text1)
             st.write(len(text1))
+            st.write(type(text1))
             text2 = text1.split(',')           
             #text2 = text1.replace('nan', '') 
             st.write(text2)
