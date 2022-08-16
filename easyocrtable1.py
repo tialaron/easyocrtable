@@ -79,8 +79,8 @@ if is_clicked2:
                                     if  bounds[i][j] :
                                                 text1 = text1 + str(bounds[i][j]) + ','
             st.write(text1)
-                        
-            text2 = text1.replace('nan', '') 
+            text2 = text1.split(',')           
+            #text2 = text1.replace('nan', '') 
             st.write(text2)
             nlp1 = spacy.load('ru_core_news_sm')
             doc1 = nlp1(text2)
