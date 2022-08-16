@@ -77,7 +77,7 @@ if is_clicked2:
             for i in range(len(bounds)):
                         for j in range(len(bounds[i])):
                                     if  bounds[i][j] :
-                                                text1 = text1 + str(bounds[i][j]) + '\n'
+                                                text1 = text1 + str(bounds[i][j]) + ','
             st.write(text1)
                         
             text2 = text1.replace('nan', '') 
