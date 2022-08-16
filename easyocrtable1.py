@@ -79,11 +79,11 @@ if is_clicked2:
                                     if  bounds[i][j] :
                                                 text1 = text1 + str(bounds[i][j]) + '\n'
             st.write(text1)
-            st.write(text1[5])
                         
-            text2 = text1.replace('nan', '') 
+            text2 = text1.replace('nan', ' ') 
             
             nlp1 = spacy.load('ru_core_news_sm')
             doc1 = nlp1(text2)
+            st.write(doc1)
             ent_html = displacy.render(doc1, style="ent", jupyter=False)
             st.markdown(ent_html, unsafe_allow_html=True)
