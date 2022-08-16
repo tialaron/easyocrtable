@@ -56,11 +56,10 @@ st.markdown('''<h1 style='text-align: center; color: black;'
 st.write('Нейронная сеть, представленная здесь, обучена выделять элементы текста и разделять их на категории (сущности).')
 st.write('Вы можете выбрать любую таблицу из представленных в списке для распознавания.')
 option1 = st.selectbox('Какой документ Вы выбираете?',('спецификация','СНИЛС','полис','регистрация','договор'))
-st.write('Вы выбрали' + option1)
-if option1:
-            st.write('Вот так выглядит документ')
-            st.image(pictures_all + option1 + '1.jpg')
-            
+st.write('Вы выбрали документ - ' + option1)
+st.write('Вот так выглядит документ')
+st.image(pictures_all + option1 + '1.jpg')
+st.write('Вот так он выглядит в качестве таблицы')            
 full_path = path_pict+option1+'_1.xlsx'
 data1 = pd.read_excel(full_path)
 data1.to_csv('ttt.csv')
