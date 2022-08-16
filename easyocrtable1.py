@@ -90,6 +90,11 @@ if is_clicked2:
             st.write(len(text2))
             st.write(text2[0])
             st.write(type(text2[0]))
+            text3 = []
+            for i in text2:
+                        if i != "nan":
+                                    text3.append(i)
+            st.write(text3)
             nlp1 = spacy.load('ru_core_news_sm')
             doc1 = nlp1(text2)
             #st.write(doc1)
