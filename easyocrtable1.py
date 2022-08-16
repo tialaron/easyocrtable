@@ -86,4 +86,6 @@ if is_clicked2:
             doc1 = nlp1(text2)
             st.write(doc1)
             ent_html = displacy.render(doc1, style="ent", jupyter=False)
+     
             st.markdown(ent_html, unsafe_allow_html=True)
+            st.write(type(ent_html))
