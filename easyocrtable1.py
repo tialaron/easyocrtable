@@ -72,16 +72,7 @@ is_clicked2 = st.button("Найти")
 if is_clicked2:
             
             bounds = data2.values.tolist()
-            listok1 = []
-            for i in range(len(bounds)):
-                        for j in range(len(bounds[i])):
-                                    if bounds[i][j] :
-                                                listok1.append(bounds[i][j])
-            listok2 = []
-            for i in range(len(listok1)):
-                        if listok1[i] != np.nan : 
-                                    listok2.append(listok1[i])
-            st.write(listok2)
+      
             text1 = ''
             for i in range(len(bounds)):
                         for j in range(len(bounds[i])):
@@ -90,7 +81,7 @@ if is_clicked2:
             st.write(text1)
                         
             text2 = text1.replace('nan', '') 
-            
+            st.write(text2)
             nlp1 = spacy.load('ru_core_news_sm')
             doc1 = nlp1(text2)
             st.write(doc1)
