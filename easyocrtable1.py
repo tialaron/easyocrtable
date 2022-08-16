@@ -72,17 +72,14 @@ is_clicked2 = st.button("Найти")
 if is_clicked2:
             
             bounds = data2.values.tolist()
-            
-            print(bounds)
-            st.write(type(bounds))
-            st.write(bounds)
+                                    
             text1 = ''
             for i in range(len(bounds)):
                         for j in range(len(bounds[i])):
                                     if  bounds[i][j] :
                                                 text1 = text1 + str(bounds[i][j]) + '\n'
             st.write(text1)
-            
+            st.write(type(text1))
             nlp1 = spacy.load('ru_core_news_sm')
             doc1 = nlp1(text1)
             ent_html = displacy.render(doc1, style="ent", jupyter=False)
